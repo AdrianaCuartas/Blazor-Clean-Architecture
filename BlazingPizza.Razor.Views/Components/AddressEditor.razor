@@ -1,0 +1,45 @@
+﻿    <div class="form-field">
+        <label>Nombre:</label>
+        <div >
+            <InputText @ref="NameInput" @bind-Value="Address.Name" />
+            <ValidationMessage For="()=>Address.Name" />
+        </div>
+    </div>
+
+    <div class="form-field">
+        <label>Dirección:</label>
+        <div>
+            <InputText @bind-Value="Address.AddressLine1" />
+            <ValidationMessage For="()=>Address.AddressLine1" />
+        </div>
+    </div>
+
+    <div class="form-field">
+        <label>Dirección Línea 2:</label>
+        <div>
+            <InputText @bind-Value="Address.AddressLine2" />
+            <ValidationMessage For="()=>Address.AddressLine2" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label>Ciudad:</label>
+        <div>
+            <InputText @bind-Value="Address.City" />
+            <ValidationMessage For="()=>Address.City" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label>Región:</label>
+        <div>
+            <InputText @bind-Value="Address.Region" />
+            <ValidationMessage For="()=>Address.Region" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label>Código Postal:</label>
+        <div>
+            <InputText @bind-Value="Address.PostalCode" />
+            <ValidationMessage For="()=>Address.PostalCode" />
+        </div>
+    </div>
+

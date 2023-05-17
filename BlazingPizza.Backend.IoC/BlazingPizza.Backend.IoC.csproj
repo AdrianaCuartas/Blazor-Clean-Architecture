@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazingPizza.Controllers\BlazingPizza.Controllers.csproj" />
+    <ProjectReference Include="..\BlazingPizza.EFCore.Repositories\BlazingPizza.EFCore.Repositories.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Presenters\BlazingPizza.Presenters.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Shared.Validators\BlazingPizza.Shared.Validators.csproj" />
+    <ProjectReference Include="..\BlazingPizza.UseCases\BlazingPizza.UseCases.csproj" />
+    <ProjectReference Include="..\CustomExceptions.HttpHandlers\CustomExceptions.HttpHandlers.csproj" />
+    <ProjectReference Include="..\Membership.IoC\Membership.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

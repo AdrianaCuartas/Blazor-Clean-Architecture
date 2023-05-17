@@ -1,0 +1,21 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    @* esto se necesario si el app.razro esta un un proyecto diferente
+    ej: si estuviera en en el proyecto:BlazingPiiza.BlazorClient
+    para señalar que cargue el assembly donde esta el MainLayout para
+    actualizar la colección de rutas si se encuentran nuevas rutas
+    AdditionalAssemblies="new[]{typeof(MainLayout).Assembly}"*@
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p class="mx-auto mt-5">
+                Lo lamentamos el recurso solicitado no  ha sido encontrado.
+            </p>
+        </LayoutView>
+    </NotFound>
+
+</Router>

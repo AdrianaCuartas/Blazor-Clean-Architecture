@@ -1,0 +1,13 @@
+﻿
+<div>
+    <div>@Exception.Message</div>
+    @ExceptionMarkup
+   
+</div>
+
+@code {
+    [Parameter]
+    public Exception Exception { get; set; }
+
+    MarkupString ExceptionMarkup => new MarkupString(ExceptionMarkupBuilder.Build(Exception));
+}

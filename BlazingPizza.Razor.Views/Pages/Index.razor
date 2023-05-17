@@ -1,0 +1,21 @@
+﻿@page "/"
+
+
+<PageTitle>Blazing Pizzas</PageTitle>
+
+<Specials OnClickSpecial="ViewModel.ShowConfigurePizzaDialog" />
+<ConfiguredPizzas Order="OrderStateService.Order" />
+
+@*@if (ViewModel.ShowingConfigureDialog)
+{
+    <ConfigurePizzaDialog Pizza="ViewModel.ConfiguringPizza"
+                          OnCancel="ViewModel.CancelConfigurePizzaDialog"
+                          OnConfirm="ViewModel.ConfirmConfigurePizzaDialog" />
+}*@
+
+<Dialog IsVisible=ViewModel.ShowingConfigureDialog>
+    <ConfigurePizzaDialog Pizza="ViewModel.ConfiguringPizza"
+                          OnCancel="ViewModel.CancelConfigurePizzaDialog"
+                          OnConfirm="ViewModel.ConfirmConfigurePizzaDialog" />
+</Dialog>
+

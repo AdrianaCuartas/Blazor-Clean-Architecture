@@ -1,0 +1,27 @@
+﻿@using CustomExceptions
+
+<div class="alert alert-danger">
+    <div>@Exception.Message</div>
+    @if (Exception is ProblemDetailsException Ex)
+    {
+        <div>@Ex.ProblemDetails</div>
+        foreach (var Error in Ex.ProblemDetails.InvalidParams)
+        {
+            <div>@Error.Key</div>
+            <ul>
+                @foreach (var Message in Error.Value)
+                {
+                    <li>@Message</li>
+                }
+            </ul>
+        }
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public Exception Exception { get; set; }
+
+
+}

@@ -1,0 +1,30 @@
+﻿
+<div class="sidebar">
+    @if(Order.HasPizzas)
+    {
+        <div class="order-contents">
+            <h2>Tu orden</h2>
+            @foreach(var ConfiguredPizza in Order.Pizzas)
+            {
+                <ConfiguredPizzaItem Pizza="ConfiguredPizza"
+                    OnRemoved="() => Order.RemovePizza(ConfiguredPizza)"/>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="empty-cart">
+            Selecciona una pizza <br/>
+            para empezar
+        </div>
+    }
+    <div class="order-total-container">
+        <div class="order-total @(Order.HasPizzas ? "" : "hidden")">
+            Total:
+            <span class="total-price">
+                @Order.GetFormattedTotalPrice()
+            </span>
+            <a href="checkout" class="btn btn-warning">Ordenar ></a>
+        </div>
+    </div>
+</div>

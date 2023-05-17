@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BlazingPizza.MAUIClient"
+             xmlns:pages="clr-namespace:BlazingPizza.Razor.Views.Pages;assembly=BlazingPizza.Razor.Views"
+             x:Class="BlazingPizza.MAUIClient.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type pages:Index}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
+
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿@page "/orders"
+<div class="main">
+    <TemplatedList Loader="LoadOrders" ListGroupClass="orders-list">
+        <Loading>Cargando...</Loading>
+        <Empty>
+            <h2>No se ha realizado alguna orden</h2>
+            <a class="btn btn-success" href="">Ordena alguna pizza</a>
+        </Empty>
+        <Item Context="Item">
+            <div class="list-group-item">
+                <div class="col">
+                    <h5>@Item.CreatedTime.ToLongDateString()</h5>
+                    Pizzas:
+                    <strong>@Item.PizzasCount</strong>
+                    Precio total:
+                    <strong>@Item.GetFormattedTotalPrice()</strong>
+                </div>
+
+                <div class="col">
+                    Estado:
+                    <strong>@Item.Status.GetText()</strong>
+                </div>
+                <div class="col text-right">
+                    @if (!Item.IsDelivered)
+                    {
+                        <a href="orderdetails/@Item.Id" class="btn btn-success">
+                            Rastrear &gt;
+                        </a>
+                    }
+                </div>
+
+            </div>
+        </Item>
+    </TemplatedList>
+</div>
+
+

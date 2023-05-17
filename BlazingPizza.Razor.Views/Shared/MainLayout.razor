@@ -1,0 +1,15 @@
+﻿@inherits LayoutComponentBase
+<Toast/>
+<TopBar />
+<main>
+    <CustomErrorBoundary OnException="OnException"
+      @ref=CustomErrorBoundaryRef>
+     <ChildContent>
+        @Body
+    </ChildContent>
+  
+    </CustomErrorBoundary>
+</main>
+<footer>
+    &copy; Blazing Pizza @DateTime.UtcNow.Year
+</footer>

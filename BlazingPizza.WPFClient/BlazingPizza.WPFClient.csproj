@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.52" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazingPizza.Backend.IoC\BlazingPizza.Backend.IoC.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Desktop.IoC\BlazingPizza.Desktop.IoC.csproj" />
+    <ProjectReference Include="..\BlazingPizza.Frontend.IoC\BlazingPizza.Frontend.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

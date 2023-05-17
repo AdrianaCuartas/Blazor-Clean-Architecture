@@ -1,0 +1,32 @@
+﻿@inherits ErrorBoundary
+@using Dialog.Blazor
+@if (CurrentException is null)
+{
+    @ChildContent
+}
+else if (ErrorContent is not null)
+{
+    @ErrorContent(CurrentException)
+}
+else
+{
+<Dialog IsVisible="true">
+    <div class="errorBoundaryContainer">
+        <div class="messages">
+            @foreach (var Exception in ReceivedExceptions)
+            {
+                <ExceptionView Exception="Exception" />
+            }
+        </div>
+        <div>
+            <span class="closeIcon" @onclick=Recover>X</span>
+        </div>
+    </div>
+</Dialog>
+  
+
+}
+
+
+
+

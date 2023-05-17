@@ -1,0 +1,30 @@
+﻿@page "/checkout"
+@using GeolocationMap.Blazor
+
+<div class="main">
+    <EditForm Model="ViewModel.Address" OnValidSubmit="PlaceOrder">
+        <SpecificationValidator Validator="AddressValidator" />
+        <div class="checkout-cols">
+            <div>
+                <h4>Revisar la orden</h4>
+                <OrderReview Order="ViewModel.Order" />
+            </div>
+            <div>
+               <GeolocationMap OnSetPosition="SetAddress" />
+            </div>
+            <div>
+                <h4>Enviar a..</h4>
+
+                <AddressEditor Address="ViewModel.Address" />
+            </div>
+        </div>
+
+        <button class="checkout-button btn btn-warning"
+                type="submit"
+                disabled="@ViewModel.IsSubmitting">
+            Realizar pedido
+        </button>
+    </EditForm>
+</div>
+
+

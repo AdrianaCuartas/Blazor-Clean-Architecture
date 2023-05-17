@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Membership.Controllers\Membership.Controllers.csproj" />
+    <ProjectReference Include="..\Membership.Presenters\Membership.Presenters.csproj" />
+    <ProjectReference Include="..\Membership.RefreshTokenManager.Memory\Membership.RefreshTokenManager.Memory.csproj" />
+    <ProjectReference Include="..\Membership.UserManager.AspNetIdentity\Membership.UserManager.AspNetIdentity.csproj" />
+    <ProjectReference Include="..\Membership.UserManager\Membership.UserManager.csproj" />
+    <ProjectReference Include="..\Membership.UserService\Membership.UserService.csproj" />
+  </ItemGroup>
+
+</Project>
