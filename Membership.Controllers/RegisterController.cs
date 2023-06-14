@@ -8,7 +8,7 @@ internal class RegisterController : IRegisterController
         Inputport = inputport;
     }
 
-    public Task RegisterAsync(UserForRegistrationDto userData) =>
+    public Task RegisterAsync(LocalUserForRegistrationDto userData) =>
         Inputport.RegisterAsync(userData);
 
 }

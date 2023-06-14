@@ -1,5 +1,4 @@
-﻿using Membership.Entities.Dtos;
-using Membership.Entities.Exceptions;
+﻿using Membership.Entities.Exceptions;
 
 namespace Membership.Entities.Interfaces;
 
@@ -23,12 +22,12 @@ public interface IUserManagerService
             throw new RegisterUserException(Errors);
         }
     }
-    Task<UserDto> GetUserByCredentialsAsync(UserCredentialsDto userCredentials);
+    Task<UserDto> GetUserByCredentialsAsync(LocalUserCredentialsDto userCredentials);
 
     //el metodo ThrowIfUnableToGetUserByCredentialsAsync va a disparar una excepción
     //si el usuario no fue encontrado
     async Task<UserDto> ThrowIfUnableToGetUserByCredentialsAsync(
-        UserCredentialsDto userCredentials)
+        LocalUserCredentialsDto userCredentials)
     {
         var User = await GetUserByCredentialsAsync(userCredentials);
         if (User == default)

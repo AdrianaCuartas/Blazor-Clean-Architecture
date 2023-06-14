@@ -15,7 +15,6 @@ internal sealed class GetOrdersInteractor : IGetOrdersInputPort
     {
         UserService.ThrowIfNotAuthenticated();
 
-
         return await Repository.GetOrdersAsync(UserService.UserId);
     }
 }

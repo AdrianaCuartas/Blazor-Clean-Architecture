@@ -1,6 +1,4 @@
 ﻿using Membership.Entities.Dtos;
-using Membership.Entities.Interfaces;
-using Membership.Entities.Interfaces.Register;
 
 namespace Membership.UserManager.Register;
 
@@ -13,8 +11,17 @@ internal class RegisterInteractor : IRegisterInputPort
         UserManagerService = userManagerService;
     }
 
-    public async Task RegisterAsync(UserForRegistrationDto userData)
+    public async Task RegisterAsync(LocalUserForRegistrationDto userData)
     {
-        await UserManagerService.ThrowIfUnableToRegisterAsync(userData);
+
+        await UserManagerService.ThrowIfUnableToRegisterAsync(
+            new UserForRegistrationDto
+            {
+                UserName = userData.Email,
+                Email = userData.Email,
+                FirstName = userData.FirstName,
+                LastName = userData.LastName,
+                Password = userData.Password
+            });
     }
 }

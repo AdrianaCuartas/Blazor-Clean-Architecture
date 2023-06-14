@@ -3,7 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Membership.Shared.Entities\Membership.Shared.Entities.csproj" />
+  </ItemGroup>
 
 </Project>

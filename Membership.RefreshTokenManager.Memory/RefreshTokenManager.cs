@@ -25,6 +25,8 @@ internal class RefreshTokenManager : IRefreshTokenManager
             Tokens.TryRemove(refreshToken, out Token _);
             if (Token.AccessToken != accessToken)
                 throw new RefreshTokenCompromisedException(refreshToken);
+
+            //verifica la fecha de expiracion del refreshtoken
             if (Token.ExpiresAt < DateTime.UtcNow)
                 throw new RefreshTokenExpiredException(refreshToken);
 

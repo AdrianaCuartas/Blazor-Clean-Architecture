@@ -1,6 +1,7 @@
 ﻿
 using Membership.Entities.Dtos;
 using Membership.Entities.Interfaces;
+using Membership.Shared.Entities;
 
 namespace Membership.UserManager.AspNetIdentity;
 
@@ -18,7 +19,7 @@ internal class UserManagerService : IUserManagerService
         List<string> Errors = null;
         var User = new User
         {
-            UserName = userData.Email,
+            UserName = userData.UserName,
             Email = userData.Email,
             FirstName = userData.FirstName,
             LastName = userData.LastName
@@ -33,7 +34,7 @@ internal class UserManagerService : IUserManagerService
         return Errors;
     }
 
-    public async Task<UserDto> GetUserByCredentialsAsync(UserCredentialsDto userCredentials)
+    public async Task<UserDto> GetUserByCredentialsAsync(LocalUserCredentialsDto userCredentials)
     {
         UserDto FoundUser = default;
         var User = await UserManager.FindByNameAsync(userCredentials.Email);

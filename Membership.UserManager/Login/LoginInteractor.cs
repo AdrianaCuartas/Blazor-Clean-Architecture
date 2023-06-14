@@ -16,7 +16,7 @@ internal class LoginInteractor : ILoginInputPort
         Presenter = presenter;
     }
 
-    public async Task LoginAsync(UserCredentialsDto userCredentials)
+    public async Task LoginAsync(LocalUserCredentialsDto userCredentials)
     {
         var User = await UserManagerService.ThrowIfUnableToGetUserByCredentialsAsync(userCredentials);
         //busca el usuario y se lo da al presentador

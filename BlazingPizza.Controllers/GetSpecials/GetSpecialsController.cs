@@ -24,7 +24,7 @@ internal sealed class GetSpecialsController : IGetSpecialsController
     public async Task<IReadOnlyCollection<PizzaSpecial>> GetSpecialsAsync()
     {
         //utiliza el presentador para que presenta la informacion y esa informacion
-        //se le envia al controlador
+        //se le envia al interactor
         return await Presenter.GetSpecialsAsync(
             await InputPort.GetSpecialsAsync());
     }

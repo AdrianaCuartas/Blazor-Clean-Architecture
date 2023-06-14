@@ -1,5 +1,4 @@
-﻿using Membership.Entities.Dtos;
-using Membership.Entities.Interfaces.Login;
+﻿using Membership.Entities.Interfaces.Login;
 using Membership.Entities.Interfaces.Login.RefreshToken;
 using Membership.Entities.Interfaces.Logout;
 using Membership.Entities.Interfaces.Register;
@@ -13,16 +12,23 @@ internal static class Users
     {
         app.MapPost("/user/register",
             async (IRegisterController controller,
-                UserForRegistrationDto userData) =>
+                LocalUserForRegistrationDto userData) =>
             {
                 await controller.RegisterAsync(userData);
                 return Results.Ok();
             });
 
+        app.MapPost("/user/externalregister",
+           async (IExternalRegisterController controller,
+               ExternalUserForRegistrationDto userData) =>
+           {
+               await controller.RegisterAsync(userData);
+               return Results.Ok();
+           });
 
         app.MapPost("/user/login",
                  async (
-                 ILoginController controller, UserCredentialsDto userCredentials,
+                 ILoginController controller, LocalUserCredentialsDto userCredentials,
                  HttpContext context) =>
                  {
                      context.Response.Headers.Add("Cache-Control", "no-store");

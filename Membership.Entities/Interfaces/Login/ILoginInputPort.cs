@@ -4,5 +4,5 @@ namespace Membership.Entities.Interfaces.Login;
 
 public interface ILoginInputPort
 {
-    Task LoginAsync(UserCredentialsDto userCredentials);
+    Task LoginAsync(LocalUserCredentialsDto userCredentials);
 }
