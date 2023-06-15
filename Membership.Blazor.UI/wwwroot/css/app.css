@@ -1,0 +1,17 @@
+﻿.form-field-column {
+    display:flex;
+    flex-direction:column;
+    margin:1rem 0.5rem;
+}
+.form-field-column >label {
+    width:auto;
+}
+
+.form-field-column >div{
+    flex-grow:1;
+}
+
+.form-field-column input{
+    width:100%;
+}
+

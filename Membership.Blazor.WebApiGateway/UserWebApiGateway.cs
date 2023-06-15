@@ -8,16 +8,15 @@ public class UserWebApiGateway : IUserWebApiGateway
     public UserWebApiGateway(IOptions<UserEndpointsOptions> options,
         IHttpClientFactory factory)
     {
-
         Options = options.Value;
-        Client = factory.CreateClient();
-        Client.BaseAddress = new Uri(Options.WeApiBaseAddress);
+        Client = factory.CreateClient(nameof(IUserWebApiGateway));
+        Client.BaseAddress = new Uri(Options.WebApiBaseAddress);
     }
 
     public async Task<UserTokensDto> LoginAsync(LocalUserCredentialsDto userCredentials)
     {
         var Response = await Client.PostAsJsonAsync(
-            Options.Login,
+             Options.Login,
              userCredentials);
         return await Response.Content.ReadFromJsonAsync<UserTokensDto>();
     }
@@ -33,8 +32,8 @@ public class UserWebApiGateway : IUserWebApiGateway
         return await Response.Content.ReadFromJsonAsync<UserTokensDto>();
     }
 
-    public async Task RegisterUserAsync(LocalUserForRegistrationDto userData)
+    public async Task RegisterUserAsync(UserForRegistrationDto userData)
     {
-        await Client.PostAsJsonAsync(Options.Resgister, userData);
+        await Client.PostAsJsonAsync(Options.Register, userData);
     }
 }

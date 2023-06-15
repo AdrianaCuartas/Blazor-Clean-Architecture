@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlazingPizza.Frontend.IoC\BlazingPizza.Frontend.IoC.csproj" />
+    <ProjectReference Include="..\Membership.Blazor.IoC\Membership.Blazor.IoC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,53 @@
+﻿
+<EditForm Model="User" OnValidSubmit=Register>
+    <DataAnnotationsValidator />
+
+    <div class="form-field-column">
+        <label>Nombre</label>
+        <div>
+            <InputText @bind-Value=User.FirstName />
+            <ValidationMessage For="(()=>User.FirstName)" />
+        </div>
+
+    </div>
+
+    <div class="form-field-column">
+        <label>Apellidos</label>
+        <div>
+            <InputText @bind-Value=User.LastName />
+            <ValidationMessage For="(()=>User.LastName)" />
+        </div>
+
+    </div>
+
+    <div class="form-field-column">
+        <label>Correo</label>
+        <div>
+            <InputText @bind-Value=User.UserName />
+            <ValidationMessage For="(()=>User.UserName)" />
+        </div>
+
+    </div>
+    <div class="form-field-column">
+        <label>Contraseña</label>
+        <div>
+            <InputText type="password" @bind-Value=User.Password />
+            <ValidationMessage For="(()=>User.Password)" />
+        </div>
+
+    </div>
+
+    <div class="form-field-column">
+        <label>Confirmar Contraseña</label>
+        <div>
+            <InputText type="password" @bind-Value=User.ConfirmPassword />
+            <ValidationMessage For="(()=>User.ConfirmPassword)" />
+        </div>
+
+    </div>
+
+    <div class="form-field-column">
+        <button class="btn btn-primary">Registrar</button>
+    </div>
+
+</EditForm>

@@ -1,5 +1,4 @@
-﻿using Membership.Entities.Dtos;
-using System.Text;
+﻿using System.Text;
 
 namespace Membership.UserManager.Register;
 
@@ -18,7 +17,7 @@ internal class ExternalRegisterInteractor : IExternalRegisterInputPort
             new UserForRegistrationDto
             {
                 UserName = $"{user.Provider}-{user.UserId}",
-                Email = user.Email,
+                //Email = "pendiente", //user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Password = GetRandomPassword() //Aspnet.identity exige un password rigido, que no sea nulo

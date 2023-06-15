@@ -6,9 +6,11 @@ public static class DependendencyContainer
         this IServiceCollection services, Action<UserEndpointsOptions> userEndpointOptions)
     {
 
-        services.AddHttpClient();
+        services.AddHttpClient(nameof(IUserWebApiGateway));
+
         services.AddScoped<IUserWebApiGateway, UserWebApiGateway>();
-        services.Configure(userEndpointOptions);
+
+        services.Configure<UserEndpointsOptions>(options => userEndpointOptions(options));
         return services;
     }
 }

@@ -12,7 +12,7 @@ internal static class Users
     {
         app.MapPost("/user/register",
             async (IRegisterController controller,
-                LocalUserForRegistrationDto userData) =>
+                UserForRegistrationDto userData) =>
             {
                 await controller.RegisterAsync(userData);
                 return Results.Ok();

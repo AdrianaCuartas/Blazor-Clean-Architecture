@@ -5,5 +5,5 @@ namespace Membership.Entities.Interfaces.Register;
 //permite acceder al interactor
 public interface IRegisterInputPort
 {
-    Task RegisterAsync(LocalUserForRegistrationDto userData);
+    Task RegisterAsync(Shared.Entities.UserForRegistrationDto userData);
 }

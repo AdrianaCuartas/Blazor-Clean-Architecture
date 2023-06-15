@@ -20,7 +20,7 @@ internal class UserManagerService : IUserManagerService
         var User = new User
         {
             UserName = userData.UserName,
-            Email = userData.Email,
+            Email = userData.UserName,
             FirstName = userData.FirstName,
             LastName = userData.LastName
         };

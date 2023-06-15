@@ -5,9 +5,9 @@ public class UserEndpointsOptions
 
     public const string SectionKey = "UserEndpoints";
 
-    public string WeApiBaseAddress { get; set; }
+    public string WebApiBaseAddress { get; set; }
 
-    public string Resgister { get; set; }
+    public string Register { get; set; }
 
     public string Login { get; set; }
 
